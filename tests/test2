@@ -1,0 +1,22 @@
+let pageObject = {}
+
+module.exports = {
+    before: function(browser){
+        pageObject = browser.page.pageObject()
+        pageObject.navigate()
+    },
+    after: function(browser) {
+       // browser.end()
+    },
+    'test even odd': function(browser) {
+        pageObject
+            //Even Odd Field
+            .setValue('@evenOddIn','4')
+            console.log('even')
+        pageObject
+            //Even odd results
+            .click('@evenOddBut')
+            .expect.element('@evenResults')
+            console.log('evenresults')
+        }
+    }

@@ -1,0 +1,14 @@
+let pageObject = {}
+
+module.exports = {
+    before: function(browser){
+        pageObject = browser.page.pageObject()
+        pageObject.navigate()
+    },
+    after: function(browser) {
+       // browser.end()
+    },
+
+
+
+}
